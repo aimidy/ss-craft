@@ -1,0 +1,300 @@
+{
+  "recipes": [
+    {
+      "name": "披薩",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "橙蛋", "qty": 4 },
+        { "name": "橙肉", "qty": 1 },
+        { "name": "松露", "qty": 6 }
+      ]
+    },
+    {
+      "name": "山珍海味鍋",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "橙螃蟹", "qty": 4 },
+        { "name": "橙肉", "qty": 1 },
+        { "name": "靈芝", "qty": 6 }
+      ]
+    },
+    {
+      "name": "海珍本味刺身",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "水", "qty": 4 },
+        { "name": "橙章魚", "qty": 2 },
+        { "name": "龍蝦", "qty": 8 }
+      ]
+    },
+    {
+      "name": "飛升之舞",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "橙蜂蜜", "qty": 2 },
+        { "name": "橙花", "qty": 2 },
+        { "name": "駝奶", "qty": 8 }
+      ]
+    },
+    {
+      "name": "松露甜餅",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "青禾", "qty": 2 },
+        { "name": "橙肉", "qty": 1 },
+        { "name": "橙蜂蜜", "qty": 4 },
+        { "name": "松露", "qty": 16 }
+      ]
+    },
+    {
+      "name": "黃金仙餃",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "芥菜", "qty": 2 },
+        { "name": "橙肉", "qty": 1 },
+        { "name": "橙章魚", "qty": 4 },
+        { "name": "靈芝", "qty": 16 }
+      ]
+    },
+    {
+      "name": "奶油焗龍蝦",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "鹽", "qty": 4 },
+        { "name": "奶油", "qty": 2 },
+        { "name": "橙花", "qty": 2 },
+        { "name": "龍蝦", "qty": 16 }
+      ]
+    },
+    {
+      "name": "月圓之夜",
+      "quality": "金色",
+      "ingredients": [
+        { "name": "菇", "qty": 2 },
+        { "name": "橙鳥蛋", "qty": 2 },
+        { "name": "橙奶油", "qty": 2 },
+        { "name": "駝奶", "qty": 16 }
+      ]
+    },
+
+    {
+      "name": "黃金散蛋",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫蜂蜜", "qty": 7 },
+        { "name": "青禾", "qty": 2 },
+        { "name": "紫蛋", "qty": 3 }
+      ]
+    },
+    {
+      "name": "樹莓蛋糕",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫莓果", "qty": 3 },
+        { "name": "青禾", "qty": 2 },
+        { "name": "紫蛋", "qty": 7 }
+      ]
+    },
+    {
+      "name": "太陽光暈",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫殼栗", "qty": 3 },
+        { "name": "紫奶油", "qty": 4 },
+        { "name": "紫花", "qty": 3 }
+      ]
+    },
+    {
+      "name": "源式章魚燒",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫味噌", "qty": 3 },
+        { "name": "紫莓果", "qty": 2 },
+        { "name": "紫章魚", "qty": 5 }
+      ]
+    },
+    {
+      "name": "將軍破陣",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫辣椒", "qty": 5 },
+        { "name": "紫肉", "qty": 2 },
+        { "name": "紫螃蟹", "qty": 5 }
+      ]
+    },
+    {
+      "name": "身披金甲",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫竹筍", "qty": 5 },
+        { "name": "紫肉", "qty": 2 },
+        { "name": "紫螃蟹", "qty": 5 }
+      ]
+    },
+    {
+      "name": "解厄刺身",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫魚", "qty": 5 },
+        { "name": "紫味噌", "qty": 2 },
+        { "name": "紫章魚", "qty": 3 }
+      ]
+    },
+    {
+      "name": "咖哩什錦菜",
+      "quality": "橙色",
+      "ingredients": [
+        { "name": "紫殼栗", "qty": 3 },
+        { "name": "紫肉", "qty": 2 },
+        { "name": "紫咖哩", "qty": 4 },
+        { "name": "紫花", "qty": 3 }
+      ]
+    },
+
+    {
+      "name": "嘟嘟果釀",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "水", "qty": 2 },
+        { "name": "藍莓果", "qty": 10 }
+      ]
+    },
+    {
+      "name": "焦甜殼栗",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍奶油", "qty": 5 },
+        { "name": "藍殼栗", "qty": 5 }
+      ]
+    },
+    {
+      "name": "海之味",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍水草", "qty": 5 },
+        { "name": "藍味噌", "qty": 2 },
+        { "name": "藍魚", "qty": 3 }
+      ]
+    },
+    {
+      "name": "花魚天婦羅",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍水草", "qty": 2 },
+        { "name": "藍刺果", "qty": 5 },
+        { "name": "藍魚", "qty": 3 }
+      ]
+    },
+    {
+      "name": "蜜汁豆餅",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍蜂蜜", "qty": 5 },
+        { "name": "藍豆子", "qty": 5 }
+      ]
+    },
+    {
+      "name": "蜜汁烤肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍蜂蜜", "qty": 10 }
+      ]
+    },
+    {
+      "name": "坎斯汀漢堡",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍土豆", "qty": 10 }
+      ]
+    },
+    {
+      "name": "酸甜嘟嘟肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍莓果", "qty": 10 }
+      ]
+    },
+    {
+      "name": "竹筍控肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍竹筍", "qty": 10 }
+      ]
+    },
+    {
+      "name": "紅燒獅子頭",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍竹筍", "qty": 10 }
+      ]
+    },
+    {
+      "name": "鮮果燒肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍咖哩", "qty": 5 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍刺果", "qty": 5 }
+      ]
+    },
+    {
+      "name": "塔吉鍋燉肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍土豆", "qty": 5 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍咖哩", "qty": 5 }
+      ]
+    },
+    {
+      "name": "滾栗子烤肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "胡椒", "qty": 2 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍殼栗", "qty": 10 }
+      ]
+    },
+    {
+      "name": "源式拉麵",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍味噌", "qty": 5 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍魚", "qty": 5 }
+      ]
+    },
+    {
+      "name": "醬香滷肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "糖", "qty": 2 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍豆子", "qty": 10 }
+      ]
+    },
+    {
+      "name": "軍團燒肉",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍竹筍", "qty": 2 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍螺肉", "qty": 8 }
+      ]
+    },
+    {
+      "name": "芳香裏肉捲",
+      "quality": "紫色",
+      "ingredients": [
+        { "name": "藍香油", "qty": 5 },
+        { "name": "藍肉", "qty": 2 },
+        { "name": "藍蘭花", "qty": 5 }
+      ]
+    }
+  ]
+}
