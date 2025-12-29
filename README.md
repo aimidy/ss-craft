@@ -1,40 +1,55 @@
 # ss-craft
 
+## 🔗 Demo
+
+<https://ss-craft.aimidy.co/>
+
 ## 專案簡介
+
 歡迎來到 **ss-craft**！這是一個超實用的料理材料計算器，專為熱愛烹飪的你而設計！無論你是廚房新手還是烹飪達人，ss-craft 都能幫助你輕鬆計算所需的材料數量，讓你準備美味佳餚變得簡單又有趣！
 
 ## 功能
+
 - **計算所需材料的數量**：只需輸入食譜，ss-craft 會自動幫你計算所需的材料！
 - **支援多種食譜**：無論是甜點、主菜還是小吃，ss-craft 都能滿足你的需求！
 
 ## 安裝
+
 1. 克隆此專案：
+
    ```bash
    git clone <repository-url>
    ```
+
 2. 進入專案目錄：
+
    ```bash
    cd ss-craft
    ```
+
 3. 安裝依賴：
+
    ```bash
    npm install
    ```
 
 ## 快速開始
+
 - 在本機以靜態網站方式開啟專案（建議使用本機伺服器，以避免瀏覽器檔案存取限制）：
-   - 直接用 VS Code 的 Live Server 擴充套件在 [src/index.html](src/index.html) 上啟動，或使用以下其中一種方式：
-   - 使用 Node.js：
-      - `npx serve src`
-      - 或 `npx http-server src -p 8080`
-   - 使用 Python（3.x）：
-      - `python -m http.server 8080 -d src`
+- 直接用 VS Code 的 Live Server 擴充套件在 [src/index.html](src/index.html) 上啟動，或使用以下其中一種方式：
+- 使用 Node.js：
+  - `npx serve src`
+  - 或 `npx http-server src -p 8080`
+
+- 使用 Python（3.x）：
+  - `python -m http.server 8080 -d src`
 
 - 開啟瀏覽器並前往 `http://localhost:8080`（依你的工具顯示的連結為準）。
 
 提示：頁面使用 Tailwind CDN 樣式（index.html 內引用），第一次載入需有網路以載入樣式；無網路也可正常運算，但外觀會較樸素。
 
 ## 食物選擇操作（依頁面 UI）
+
 - **選擇料理**：在頁面頂部的下拉選單中選擇料理（[src/index.html](src/index.html) 內的 `#recipeSelect`）。選擇後右側會顯示料理品質徽章。
 - **加入清單**：按下「加入清單」（`#addBtn`），會把該料理加入到「已選料理」表格；若同一道料理已存在，會自動將份數 +1（見 [src/script.js](src/script.js) 的 `upsertSelected()`）。
 - **調整份數**：在「已選料理」表格中，直接修改份數輸入框（整數）。材料明細會即時依份數縮放；當份數調為 0 時，該料理會自動移除（`input` 事件內邏輯）。
@@ -44,6 +59,7 @@
 補充：初次載入若尚未選擇任何料理，系統會預設加入第一道料理 1 份，幫助你快速上手（見 `init()`）。
 
 ## 成本計算操作（材料 × 單價）
+
 - **總材料彙總**：下方的「總材料彙總」表格會整合所有已選料理的材料與數量（見 [src/script.js](src/script.js) 的 `computeTotals()` 與 `renderTotals()`）。
 - **輸入單價**：在「成本計算」區塊每一列材料旁，可以輸入該材料的單價（僅整數）。
 - **材料成本**：每列會即時計算「材料成本 = 該材料總數量 × 單價」。
@@ -52,16 +68,18 @@
 - **狀態保存**：已選料理與各材料單價都會自動存入瀏覽器的 `localStorage`，下次開啟仍會保留（key：`recipe_calc_state_v1`；見 `saveAppState()`/`loadAppState()`）。
 
 計算公式：
+
 - 總數量 = 各料理份數 × 對應材料用量，加總後依材料聚合。
 - 材料成本 = 材料總數量 × 該材料單價。
 - 總成本 = 所有材料成本加總。
 
 ## 資料來源與維護
+
 - 食譜資料存於 [src/recipes.json](src/recipes.json)，頁面載入時以 `fetch('./recipes.json')` 讀取（`cache: 'no-store'`，避免舊快取）。
 - 每筆食譜包含：
-   - **name**：料理名稱（如「披薩」）
-   - **quality**：品質（顯示顏色徽章，支援「金色／橙色／紫色」等）
-   - **ingredients**：材料陣列，每項含 `name` 與 `qty`（每 1 份的用量）
+  - **name**：料理名稱（如「披薩」）
+  - **quality**：品質（顯示顏色徽章，支援「金色／橙色／紫色」等）
+  - **ingredients**：材料陣列，每項含 `name` 與 `qty`（每 1 份的用量）
 
 示例（節錄）：
 
@@ -80,6 +98,7 @@
 更新食譜：直接編輯 [src/recipes.json](src/recipes.json) 後重新整理頁面即可。若格式錯誤（例如缺少 `recipes` 陣列），頁面會在頂部顯示錯誤訊息（`#error`）。
 
 ## 狀態重置與疑難排解
+
 - **重置已選料理**：按「清空」即可。
 - **重置單價**：按「清除單價」即可。
 - **完全重置所有狀態**：在瀏覽器清除該站台的 `localStorage`（key：`recipe_calc_state_v1`）。
@@ -87,10 +106,13 @@
 - **樣式未載入**：確認 CDN 可用；無網路時仍可使用功能但樣式會簡化。
 
 ## 開發
+
 - 使用 `prettier` 進行代碼格式化，保持代碼整潔！
 
 ## 貢獻
+
 我們歡迎任何貢獻！如果你有想法或建議，請隨時提交拉取請求或開啟問題，讓我們一起讓 ss-craft 變得更好！
 
 ## 授權
+
 本專案採用 ISC 授權，讓我們一起分享這份烹飪的樂趣！
