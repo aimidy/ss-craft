@@ -171,37 +171,38 @@
                 </div>
 
                 <!-- 料理列表 -->
-                <div class="flex flex-wrap items-end gap-3">
-                    <label class="flex flex-col gap-1 flex-1 min-w-[260px]">
+                <div class="space-y-3">
+                    <div class="flex flex-col gap-1">
                         <span class="text-xs font-medium text-slate-700">選擇料理</span>
-
                         <div class="flex items-center gap-2 flex-wrap">
                             <select
                                 id="recipeSelect"
-                                class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                                class="flex-1 min-w-[260px] rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
                             ></select>
-
                             <!-- selected quality badge -->
                             <span id="selectedQualityBadge" class="hidden"></span>
                         </div>
-                    </label>
+                    </div>
 
-                    <button
-                        id="addBtn"
-                        class="btn-primary rounded-xl px-4 py-2 text-sm font-medium text-cocoa-900 active:scale-[.99] transition"
-                    >
-                        加入清單
-                    </button>
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <span id="status" class="text-sm text-slate-600 flex-1"></span>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <button
+                                id="addBtn"
+                                class="btn-primary rounded-xl px-4 py-2 text-sm font-medium text-cocoa-900 active:scale-[.99] transition"
+                            >
+                                加入清單
+                            </button>
 
-                    <button
-                        id="clearBtn"
-                        class="btn-ghost rounded-xl border border-cream-200 bg-white/70 px-4 py-2 text-sm font-medium text-cocoa-900 shadow-cozy2 active:bg-white/90 transition"
-                        title="清空所有已選料理"
-                    >
-                        清空
-                    </button>
-
-                    <span id="status" class="text-sm text-slate-600"></span>
+                            <button
+                                id="clearBtn"
+                                class="btn-ghost rounded-xl border border-cream-200 bg-white/70 px-4 py-2 text-sm font-medium text-cocoa-900 shadow-cozy2 active:bg-white/90 transition"
+                                title="清空所有已選料理"
+                            >
+                                清空
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
