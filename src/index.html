@@ -5,92 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>料理材料計算器</title>
 
-        <!-- Warm theme config (Tailwind CDN) -->
-        <script>
-            tailwind = window.tailwind || {};
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            sans: [
-                                '"Noto Sans TC"',
-                                'ui-sans-serif',
-                                'system-ui',
-                                '-apple-system',
-                                'Segoe UI',
-                                'Roboto',
-                                'Helvetica',
-                                'Arial',
-                            ],
-                        },
-                        colors: {
-                            cream: { 50: '#fffaf6', 100: '#fff3ea', 200: '#ffe6d6' },
-                            cocoa: { 900: '#3b2f2a', 700: '#6b564e' },
-                            rosewarm: { 50: '#fff1f5', 200: '#ffd0de', 500: '#ff8aa1' },
-                            peach: { 50: '#fff5ea', 200: '#ffd9b8', 500: '#ffb36b' },
-                            mint: { 50: '#eefaf5', 200: '#cfeee2', 500: '#7fcdb5' },
-                        },
-                        boxShadow: {
-                            cozy: '0 12px 34px rgba(116, 83, 70, 0.14)',
-                            cozy2: '0 8px 18px rgba(116, 83, 70, 0.10)',
-                        },
-                    },
-                },
-            };
-        </script>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
 
-        <!-- extra cozy polish -->
-        <style>
-            body {
-                background:
-                    radial-gradient(
-                        1200px 600px at 18% 10%,
-                        rgba(255, 179, 107, 0.22),
-                        transparent 60%
-                    ),
-                    radial-gradient(
-                        900px 520px at 82% 18%,
-                        rgba(255, 138, 161, 0.2),
-                        transparent 55%
-                    ),
-                    radial-gradient(
-                        1000px 720px at 50% 92%,
-                        rgba(127, 205, 181, 0.18),
-                        transparent 55%
-                    ),
-                    linear-gradient(180deg, #fffaf6, #fff1e6);
-            }
-            .card {
-                background: rgba(255, 255, 255, 0.78);
-                border: 1px solid rgba(240, 215, 205, 1);
-                box-shadow: 0 12px 34px rgba(116, 83, 70, 0.14);
-                backdrop-filter: blur(6px);
-            }
-            .table-row-hover tbody tr:hover td {
-                background: rgba(255, 179, 107, 0.08);
-            }
-            .btn-primary {
-                border: 1px solid rgba(255, 138, 161, 0.35);
-                background: linear-gradient(
-                    180deg,
-                    rgba(255, 138, 161, 0.26),
-                    rgba(255, 179, 107, 0.18)
-                );
-                box-shadow: 0 10px 22px rgba(255, 138, 161, 0.14);
-            }
-            .btn-primary:hover {
-                filter: saturate(1.06);
-            }
-            .btn-ghost:hover {
-                background: rgba(255, 255, 255, 0.75);
-            }
-        </style>
+        <!-- Pure CSS (no Tailwind) -->
+        <link rel="stylesheet" href="./styles.css" />
     </head>
 
     <body class="font-sans text-cocoa-900">
         <div class="mx-auto max-w-5xl px-4 py-8">
-            <div class="flex items-end justify-between gap-4 flex-wrap">
+            <div class="page-header">
                 <div>
                     <h1 class="text-2xl font-semibold tracking-tight">🍽️ 料理材料計算器</h1>
                     <p class="mt-2 text-sm text-slate-600">
@@ -99,23 +28,17 @@
                 </div>
 
                 <!-- Legend -->
-                <div class="flex items-center gap-2 text-xs text-slate-600 flex-wrap">
-                    <span
-                        class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"
-                    >
-                        <span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                <div class="legend text-xs text-slate-600">
+                    <span class="legend-chip">
+                        <span class="legend-dot bg-amber-400"></span>
                         金色
                     </span>
-                    <span
-                        class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"
-                    >
-                        <span class="inline-flex h-2.5 w-2.5 rounded-full bg-orange-500"></span>
+                    <span class="legend-chip">
+                        <span class="legend-dot bg-orange-500"></span>
                         橙色
                     </span>
-                    <span
-                        class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"
-                    >
-                        <span class="inline-flex h-2.5 w-2.5 rounded-full bg-violet-500"></span>
+                    <span class="legend-chip">
+                        <span class="legend-dot bg-violet-500"></span>
                         紫色
                     </span>
                 </div>
@@ -125,33 +48,33 @@
             <div class="mt-6 card rounded-2xl p-5">
                 <!-- 篩選區域 -->
                 <div class="mb-4 pb-4 border-b border-slate-200">
-                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <div class="row mb-3">
                         <span class="text-xs font-medium text-slate-700">品質篩選：</span>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="row">
                             <button
                                 id="filterAll"
-                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition active"
+                                class="quality-filter-btn active border border-slate-400 bg-slate-100 text-cocoa-900"
                                 data-quality="all"
                             >
                                 全部
                             </button>
                             <button
                                 id="filterGold"
-                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition"
+                                class="quality-filter-btn border border-slate-300 bg-white text-slate-700"
                                 data-quality="金色"
                             >
                                 🟡 金色
                             </button>
                             <button
                                 id="filterOrange"
-                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition"
+                                class="quality-filter-btn border border-slate-300 bg-white text-slate-700"
                                 data-quality="橙色"
                             >
                                 🟠 橙色
                             </button>
                             <button
                                 id="filterPurple"
-                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition"
+                                class="quality-filter-btn border border-slate-300 bg-white text-slate-700"
                                 data-quality="紫色"
                             >
                                 🟣 紫色
@@ -159,46 +82,33 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap items-center gap-3">
+                    <div class="row">
                         <span class="text-xs font-medium text-slate-700">搜尋：</span>
                         <input
                             id="recipeSearch"
                             type="text"
                             placeholder="輸入料理名稱搜尋..."
-                            class="min-w-[240px] rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                            class="input min-w-240"
                         />
                     </div>
                 </div>
 
                 <!-- 料理列表 -->
                 <div class="space-y-3">
-                    <div class="flex flex-col gap-1">
+                    <div class="col gap-1">
                         <span class="text-xs font-medium text-slate-700">選擇料理</span>
-                        <div class="flex items-center gap-2 flex-wrap">
-                            <select
-                                id="recipeSelect"
-                                class="flex-1 min-w-[260px] rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-                            ></select>
-                            <!-- selected quality badge -->
+                        <div class="row">
+                            <select id="recipeSelect" class="select flex-1 min-w-260"></select>
+                            <!-- selected quality badge (script.js will fill) -->
                             <span id="selectedQualityBadge" class="hidden"></span>
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <div class="row justify-between">
                         <span id="status" class="text-sm text-slate-600 flex-1"></span>
-                        <div class="flex items-center gap-2 flex-wrap">
-                            <button
-                                id="addBtn"
-                                class="btn-primary rounded-xl px-4 py-2 text-sm font-medium text-cocoa-900 active:scale-[.99] transition"
-                            >
-                                加入清單
-                            </button>
-
-                            <button
-                                id="clearBtn"
-                                class="btn-ghost rounded-xl border border-cream-200 bg-white/70 px-4 py-2 text-sm font-medium text-cocoa-900 shadow-cozy2 active:bg-white/90 transition"
-                                title="清空所有已選料理"
-                            >
+                        <div class="row">
+                            <button id="addBtn" class="btn btn-primary">加入清單</button>
+                            <button id="clearBtn" class="btn btn-ghost" title="清空所有已選料理">
                                 清空
                             </button>
                         </div>
@@ -208,7 +118,7 @@
 
             <!-- Selected -->
             <div class="mt-6 card rounded-2xl p-5">
-                <div class="flex items-center justify-between gap-3 flex-wrap">
+                <div class="row justify-between">
                     <h2 class="text-lg font-semibold">🧾 已選料理（可調整份數）</h2>
                 </div>
 
@@ -219,13 +129,11 @@
                 <div id="selectedTableWrap" class="mt-4 overflow-x-auto hidden">
                     <table class="min-w-full text-sm table-row-hover">
                         <thead>
-                            <tr
-                                class="border-b border-cream-200 bg-cream-50 text-left text-cocoa-900/80"
-                            >
-                                <th class="px-3 py-3 font-medium w-[38%]">料理（含品質）</th>
-                                <th class="px-3 py-3 font-medium w-[160px]">份數</th>
+                            <tr class="table-head">
+                                <th class="px-3 py-3 font-medium th-w-name">料理（含品質）</th>
+                                <th class="px-3 py-3 font-medium th-w-160">份數</th>
                                 <th class="px-3 py-3 font-medium">材料明細（依份數縮放）</th>
-                                <th class="px-3 py-3 font-medium w-[96px]"></th>
+                                <th class="px-3 py-3 font-medium th-w-96"></th>
                             </tr>
                         </thead>
                         <tbody id="selectedTbody" class="divide-y divide-slate-100"></tbody>
@@ -244,11 +152,9 @@
                 <div id="totalTableWrap" class="mt-4 overflow-x-auto hidden">
                     <table class="min-w-full text-sm table-row-hover">
                         <thead>
-                            <tr
-                                class="border-b border-cream-200 bg-cream-50 text-left text-cocoa-900/80"
-                            >
+                            <tr class="table-head">
                                 <th class="px-3 py-3 font-medium">材料</th>
-                                <th class="px-3 py-3 font-medium w-[160px]">總數量</th>
+                                <th class="px-3 py-3 font-medium th-w-160">總數量</th>
                             </tr>
                         </thead>
                         <tbody id="totalTbody" class="divide-y divide-slate-100"></tbody>
@@ -259,25 +165,22 @@
 
                 <!-- Cost Calculator -->
                 <div class="mt-6 border-t border-slate-200 pt-5">
-                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <div class="row justify-between">
                         <h3 class="text-base font-semibold">🧮 成本計算</h3>
                         <div class="text-xs text-slate-500">
                             輸入單價後自動計算：成本 = 總數量 × 單價（單價與已選料理會自動保存）
                         </div>
                     </div>
 
-                    <!-- ✅ moved to above unit-price table -->
-                    <div
-                        class="mt-4 flex items-center justify-between gap-3 flex-wrap rounded-xl border border-slate-200 bg-white px-4 py-3"
-                    >
-                        <div class="flex items-center gap-3">
+                    <div class="mt-4 cost-summary">
+                        <div class="row">
                             <span class="text-sm text-slate-600">總成本</span>
                             <span id="costTotal" class="text-lg font-semibold tabular-nums">0</span>
                         </div>
 
                         <button
                             id="clearPricesBtn"
-                            class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-800 shadow-sm hover:bg-slate-50 active:bg-slate-100"
+                            class="btn btn-light"
                             title="只清除單價，不影響已選料理"
                         >
                             清除單價
@@ -291,13 +194,11 @@
                     <div id="costTableWrap" class="mt-4 overflow-x-auto hidden">
                         <table class="min-w-full text-sm table-row-hover">
                             <thead>
-                                <tr
-                                    class="border-b border-cream-200 bg-cream-50 text-left text-cocoa-900/80"
-                                >
+                                <tr class="table-head">
                                     <th class="px-3 py-3 font-medium">材料</th>
-                                    <th class="px-3 py-3 font-medium w-[120px]">總數量</th>
-                                    <th class="px-3 py-3 font-medium w-[180px]">單價</th>
-                                    <th class="px-3 py-3 font-medium w-[160px]">材料成本</th>
+                                    <th class="px-3 py-3 font-medium th-w-120">總數量</th>
+                                    <th class="px-3 py-3 font-medium th-w-180">單價</th>
+                                    <th class="px-3 py-3 font-medium th-w-160">材料成本</th>
                                 </tr>
                             </thead>
                             <tbody id="costTbody" class="divide-y divide-slate-100"></tbody>

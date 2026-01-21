@@ -1,0 +1,735 @@
+/* =========================
+   Theme tokens
+========================= */
+:root {
+    --cream-50: #fffaf6;
+    --cream-100: #fff3ea;
+    --cream-200: #ffe6d6;
+
+    --cocoa-900: #3b2f2a;
+    --cocoa-700: #6b564e;
+
+    --rosewarm-50: #fff1f5;
+    --rosewarm-200: #ffd0de;
+    --rosewarm-500: #ff8aa1;
+
+    --peach-50: #fff5ea;
+    --peach-200: #ffd9b8;
+    --peach-500: #ffb36b;
+
+    --mint-50: #eefaf5;
+    --mint-200: #cfeee2;
+    --mint-500: #7fcdb5;
+
+    /* slate-ish */
+    --slate-900: #0f172a;
+    --slate-800: #1f2937;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-400: #94a3b8;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+
+    /* amber / orange / violet */
+    --amber-50: #fffbeb;
+    --amber-200: #fde68a;
+    --amber-400: #fbbf24;
+    --amber-800: #92400e;
+
+    --orange-50: #fff7ed;
+    --orange-200: #fed7aa;
+    --orange-500: #f97316;
+    --orange-800: #9a3412;
+
+    --violet-50: #f5f3ff;
+    --violet-200: #ddd6fe;
+    --violet-500: #8b5cf6;
+    --violet-800: #5b21b6;
+
+    --red-700: #b91c1c;
+
+    --shadow-cozy: 0 12px 34px rgba(116, 83, 70, 0.14);
+    --shadow-cozy2: 0 8px 18px rgba(116, 83, 70, 0.1);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-2xl: 16px;
+
+    --ring: 0 0 0 3px rgba(226, 232, 240, 0.9);
+}
+
+/* =========================
+   Base
+========================= */
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background:
+        radial-gradient(1200px 600px at 18% 10%, rgba(255, 179, 107, 0.22), transparent 60%),
+        radial-gradient(900px 520px at 82% 18%, rgba(255, 138, 161, 0.2), transparent 55%),
+        radial-gradient(1000px 720px at 50% 92%, rgba(127, 205, 181, 0.18), transparent 55%),
+        linear-gradient(180deg, var(--cream-50), #fff1e6);
+}
+
+/* =========================
+   Small layout helpers
+========================= */
+.hidden {
+    display: none !important;
+}
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* legend */
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.legend-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--slate-200);
+    background: #fff;
+    padding: 0.25rem 0.75rem;
+}
+.legend-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 999px;
+}
+
+/* rows/cols */
+.row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.gap-1 {
+    gap: 0.25rem;
+}
+.mb-3 {
+    margin-bottom: 0.75rem;
+}
+.mb-4 {
+    margin-bottom: 1rem;
+}
+.mt-2 {
+    margin-top: 0.5rem;
+}
+.mt-3 {
+    margin-top: 0.75rem;
+}
+.mt-4 {
+    margin-top: 1rem;
+}
+.mt-6 {
+    margin-top: 1.5rem;
+}
+.pb-4 {
+    padding-bottom: 1rem;
+}
+.pt-5 {
+    padding-top: 1.25rem;
+}
+.p-5 {
+    padding: 1.25rem;
+}
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.flex-1 {
+    flex: 1 1 auto;
+}
+
+.min-w-full {
+    min-width: 100%;
+}
+.min-w-240 {
+    min-width: 240px;
+}
+.min-w-260 {
+    min-width: 260px;
+}
+.max-w-5xl {
+    max-width: 64rem;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================
+   Typography utilities (subset)
+========================= */
+.font-sans {
+    font-family:
+        'Noto Sans TC',
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial;
+}
+.font-medium {
+    font-weight: 500;
+}
+.font-semibold {
+    font-weight: 600;
+}
+
+.tracking-tight {
+    letter-spacing: -0.01em;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+.text-sm {
+    font-size: 0.875rem;
+}
+.text-base {
+    font-size: 1rem;
+}
+.text-lg {
+    font-size: 1.125rem;
+}
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
+
+/* text colors */
+.text-slate-900 {
+    color: var(--slate-900);
+}
+.text-slate-800 {
+    color: var(--slate-800);
+}
+.text-slate-700 {
+    color: var(--slate-700);
+}
+.text-slate-600 {
+    color: var(--slate-600);
+}
+.text-slate-500 {
+    color: var(--slate-500);
+}
+
+.text-cocoa-900 {
+    color: var(--cocoa-900);
+}
+.text-cocoa-700 {
+    color: var(--cocoa-700);
+}
+
+.text-amber-800 {
+    color: var(--amber-800);
+}
+.text-orange-800 {
+    color: var(--orange-800);
+}
+.text-violet-800 {
+    color: var(--violet-800);
+}
+
+.text-red-700 {
+    color: var(--red-700);
+}
+
+/* =========================
+   Borders / radius / bg utilities (subset)
+========================= */
+.border {
+    border-width: 1px;
+    border-style: solid;
+}
+.border-b {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+.border-t {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.border-slate-200 {
+    border-color: var(--slate-200);
+}
+.border-slate-300 {
+    border-color: var(--slate-300);
+}
+.border-slate-400 {
+    border-color: var(--slate-400);
+}
+.border-cream-200 {
+    border-color: var(--cream-200);
+}
+
+.border-amber-200 {
+    border-color: var(--amber-200);
+}
+.border-orange-200 {
+    border-color: var(--orange-200);
+}
+.border-violet-200 {
+    border-color: var(--violet-200);
+}
+
+.rounded-lg {
+    border-radius: var(--radius-lg);
+}
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+.rounded-2xl {
+    border-radius: var(--radius-2xl);
+}
+.rounded-full {
+    border-radius: 999px;
+}
+
+.bg-white {
+    background: #fff;
+}
+.bg-slate-100 {
+    background: var(--slate-100);
+}
+.bg-cream-50 {
+    background: var(--cream-50);
+}
+.bg-amber-50 {
+    background: var(--amber-50);
+}
+.bg-orange-50 {
+    background: var(--orange-50);
+}
+.bg-violet-50 {
+    background: var(--violet-50);
+}
+
+.bg-amber-400 {
+    background: var(--amber-400);
+}
+.bg-orange-500 {
+    background: var(--orange-500);
+}
+.bg-violet-500 {
+    background: var(--violet-500);
+}
+.bg-rosewarm-200 {
+    background: var(--rosewarm-200);
+}
+
+/* =========================
+   Card / tables
+========================= */
+.card {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(240, 215, 205, 1);
+    box-shadow: var(--shadow-cozy);
+    backdrop-filter: blur(6px);
+}
+
+.table-row-hover tbody tr:hover td {
+    background: rgba(255, 179, 107, 0.08);
+}
+
+.table-head {
+    border-bottom: 1px solid var(--cream-200);
+    background: var(--cream-50);
+    text-align: left;
+    color: rgba(59, 47, 42, 0.8);
+}
+
+.divide-y > * + * {
+    border-top: 1px solid var(--slate-100);
+}
+.divide-slate-100 > * + * {
+    border-top-color: var(--slate-100);
+}
+
+/* widths used by the HTML header */
+.th-w-96 {
+    width: 96px;
+}
+.th-w-120 {
+    width: 120px;
+}
+.th-w-160 {
+    width: 160px;
+}
+.th-w-180 {
+    width: 180px;
+}
+.th-w-name {
+    width: 38%;
+}
+
+/* =========================
+   Padding utilities used by script.js
+========================= */
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* =========================
+   Inputs / selects
+========================= */
+.input,
+.select {
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--slate-300);
+    background: #fff;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    box-shadow: var(--shadow-sm);
+    outline: none;
+}
+.input:focus,
+.select:focus {
+    border-color: var(--slate-400);
+    box-shadow: var(--ring);
+}
+
+/* script.js dynamically creates these inputs with w-28 / w-40 */
+.w-28 {
+    width: 7rem;
+}
+.w-40 {
+    width: 10rem;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+    border-radius: var(--radius-xl);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid var(--slate-300);
+    background: #fff;
+    color: var(--slate-800);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+.btn:hover {
+    background: var(--slate-100);
+}
+.btn:active {
+    transform: scale(0.99);
+}
+
+.btn-primary {
+    border: 1px solid rgba(255, 138, 161, 0.35);
+    background: linear-gradient(180deg, rgba(255, 138, 161, 0.26), rgba(255, 179, 107, 0.18));
+    box-shadow: 0 10px 22px rgba(255, 138, 161, 0.14);
+    color: var(--cocoa-900);
+}
+.btn-primary:hover {
+    filter: saturate(1.06);
+}
+
+.btn-ghost {
+    border: 1px solid var(--cream-200);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: var(--shadow-cozy2);
+    color: var(--cocoa-900);
+}
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.btn-light {
+    border: 1px solid var(--slate-300);
+    background: #fff;
+    color: var(--slate-800);
+}
+
+/* =========================
+   Quality filter buttons
+   (script.js will add/remove these classes) :contentReference[oaicite:2]{index=2}
+========================= */
+.quality-filter-btn {
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        border-color 0.15s,
+        color 0.15s,
+        transform 0.05s;
+}
+.quality-filter-btn:active {
+    transform: scale(0.99);
+}
+
+/* =========================
+   Cost summary box
+========================= */
+.cost-summary {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--slate-200);
+    background: #fff;
+    padding: 0.75rem 1rem;
+}
+
+/* =========================
+   Badge pieces created by script.js
+   (uses inline-flex / items-center / gap-2 / px-2.5 / py-0.5 / h-2.5 / w-2.5)
+========================= */
+.inline-flex {
+    display: inline-flex;
+}
+.items-center {
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+/* used in badge strings */
+.px-2-5 {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+.py-0-5 {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+}
+
+/* Since script.js literally uses "px-2.5 py-0.5" as class names,
+   we must match them with escaped selectors. */
+.px-2\.5 {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+.py-0\.5 {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+}
+
+.h-2\.5 {
+    height: 0.625rem;
+}
+.w-2\.5 {
+    width: 0.625rem;
+}
+
+/* 整個 table 外框 */
+.table-wrap,
+.table-row-hover {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+}
+
+/* 表頭 */
+.table-head {
+    background: linear-gradient(180deg, #fff6ec, #ffeddc);
+    border-bottom: 1px solid #f3d6bf;
+}
+
+.table-head th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cocoa-900);
+    letter-spacing: 0.04em;
+}
+
+/* 表格列 */
+.table-row-hover tbody tr {
+    background: #ffffff;
+}
+
+/* 奇偶列區分（非常淡，不搶） */
+.table-row-hover tbody tr:nth-child(even) td {
+    background: #fffaf5;
+}
+
+/* hover 效果（明顯但不刺眼） */
+.table-row-hover tbody tr:hover td {
+    background: linear-gradient(90deg, rgba(255, 179, 107, 0.12), rgba(255, 138, 161, 0.1));
+}
+
+/* cell */
+.table-row-hover td {
+    padding: 0.75rem;
+    color: var(--slate-800);
+    line-height: 1.5;
+}
+
+/* 重要欄位：數量 / 份數 */
+.table-row-hover td:nth-child(2),
+.table-row-hover td:nth-child(4) {
+    font-weight: 600;
+    color: var(--cocoa-900);
+}
+
+/* 材料明細字色 */
+.table-row-hover td:nth-child(3) {
+    color: var(--slate-700);
+}
+
+/* 表格分隔線更清楚 */
+.divide-slate-100 > * + * {
+    border-top: 1px solid #f0e0d2;
+}
+
+/* ===== 總材料表格特化 ===== */
+#totalTableWrap .table-row-hover td {
+    font-size: 0.875rem;
+}
+
+#totalTableWrap .table-row-hover td:last-child {
+    font-weight: 700;
+    color: var(--cocoa-900);
+}
+
+/* ===== 成本表格特化 ===== */
+#costTableWrap .table-row-hover td:last-child {
+    font-weight: 700;
+    color: #9a3412; /* 深橙色，錢要顯眼 */
+}
+
+/* =========================
+   TABLE 視覺強化（更清楚版）
+========================= */
+
+/* 整個 table 外框 */
+.table-wrap,
+.table-row-hover {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+}
+
+/* 表頭 */
+.table-head {
+    background: linear-gradient(180deg, #fff6ec, #ffeddc);
+    border-bottom: 1px solid #f3d6bf;
+}
+
+.table-head th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cocoa-900);
+    letter-spacing: 0.04em;
+}
+
+/* 表格列 */
+.table-row-hover tbody tr {
+    background: #ffffff;
+}
+
+/* 奇偶列區分（非常淡，不搶） */
+.table-row-hover tbody tr:nth-child(even) td {
+    background: #fffaf5;
+}
+
+/* hover 效果（明顯但不刺眼） */
+.table-row-hover tbody tr:hover td {
+    background: linear-gradient(90deg, rgba(255, 179, 107, 0.12), rgba(255, 138, 161, 0.1));
+}
+
+/* cell */
+.table-row-hover td {
+    padding: 0.75rem;
+    color: var(--slate-800);
+    line-height: 1.5;
+}
+
+/* 重要欄位：數量 / 份數 */
+.table-row-hover td:nth-child(2),
+.table-row-hover td:nth-child(4) {
+    font-weight: 600;
+    color: var(--cocoa-900);
+}
+
+/* 材料明細字色 */
+.table-row-hover td:nth-child(3) {
+    color: var(--slate-700);
+}
+
+/* 表格分隔線更清楚 */
+.divide-slate-100 > * + * {
+    border-top: 1px solid #f0e0d2;
+}
+
+/* ===== 總材料表格特化 ===== */
+#totalTableWrap .table-row-hover td {
+    font-size: 0.875rem;
+}
+
+#totalTableWrap .table-row-hover td:last-child {
+    font-weight: 700;
+    color: var(--cocoa-900);
+}
+
+/* ===== 成本表格特化 ===== */
+#costTableWrap .table-row-hover td:last-child {
+    font-weight: 700;
+    color: #9a3412; /* 深橙色，錢要顯眼 */
+}
