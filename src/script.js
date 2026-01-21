@@ -142,8 +142,8 @@ function qualityTheme(quality) {
         default:
             return {
                 dot: '⚪',
-                badge: 'inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-700',
-                chipDot: 'bg-slate-400',
+                badge: 'inline-flex items-center gap-2 rounded-full border border-cream-200 bg-cream-50 px-2.5 py-0.5 text-xs font-medium text-cocoa-700',
+                chipDot: 'bg-rosewarm-200',
             };
     }
 }
