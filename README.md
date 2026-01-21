@@ -12,37 +12,38 @@
 
 - **計算所需材料的數量**：只需輸入食譜，ss-craft 會自動幫你計算所需的材料！
 - **支援多種食譜**：無論是甜點、主菜還是小吃，ss-craft 都能滿足你的需求！
+- **搜尋與篩選**：支援「品質」與「屬性」篩選（屬性含：生命／攻擊／防禦），以及名稱關鍵字搜尋。
 
 ## 🛠️ 安裝
 
 1. 克隆此專案：
 
-   ```bash
-   git clone <repository-url>
-   ```
+    ```bash
+    git clone <repository-url>
+    ```
 
 2. 進入專案目錄：
 
-   ```bash
-   cd ss-craft
-   ```
+    ```bash
+    cd ss-craft
+    ```
 
 3. 安裝依賴：
 
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 
 ## 🚀 快速開始
 
 - 在本機以靜態網站方式開啟專案（建議使用本機伺服器，以避免瀏覽器檔案存取限制）：
 - 直接用 VS Code 的 Live Server 擴充套件在 [src/index.html](src/index.html) 上啟動，或使用以下其中一種方式：
 - 使用 Node.js：
-  - `npx serve src`
-  - 或 `npx http-server src -p 8080`
+    - `npx serve src`
+    - 或 `npx http-server src -p 8080`
 
 - 使用 Python（3.x）：
-  - `python -m http.server 8080 -d src`
+    - `python -m http.server 8080 -d src`
 
 - 開啟瀏覽器並前往 `http://localhost:8080`（依你的工具顯示的連結為準）。
 
@@ -55,6 +56,12 @@
 - **調整份數**：在「已選料理」表格中，直接修改份數輸入框（整數）。材料明細會即時依份數縮放；當份數調為 0 時，該料理會自動移除（`input` 事件內邏輯）。
 - **移除單一道料理**：點「移除」按鈕刪除該列料理。
 - **清空所有料理**：按「清空」（`#clearBtn`）會移除所有已選料理。
+
+### 篩選與搜尋
+
+- **品質篩選**：使用上方「品質篩選」按鈕（全部／金色／橙色／紫色）。
+- **屬性篩選**：使用上方「屬性篩選」按鈕（全部／生命／攻擊／防禦）。
+- **名稱搜尋**：在搜尋框輸入料理名稱的關鍵字。
 
 補充：初次載入若尚未選擇任何料理，系統會預設加入第一道料理 1 份，幫助你快速上手（見 `init()`）。
 
@@ -77,21 +84,23 @@
 
 - 食譜資料存於 [src/recipes.json](src/recipes.json)，頁面載入時以 `fetch('./recipes.json')` 讀取（`cache: 'no-store'`，避免舊快取）。
 - 每筆食譜包含：
-  - **name**：料理名稱（如「披薩」）
-  - **quality**：品質（顯示顏色徽章，支援「金色／橙色／紫色」等）
-  - **ingredients**：材料陣列，每項含 `name` 與 `qty`（每 1 份的用量）
+    - **name**：料理名稱（如「披薩」）
+    - **quality**：品質（顯示顏色徽章，支援「金色／橙色／紫色」等）
+    - **attribute**：永久屬性（支援「生命／攻擊／防禦」，目前預設為生命）
+    - **ingredients**：材料陣列，每項含 `name` 與 `qty`（每 1 份的用量）
 
 示例（節錄）：
 
 ```json
 {
-   "name": "披薩",
-   "quality": "金色",
-   "ingredients": [
-      { "name": "橙蛋", "qty": 4 },
-      { "name": "橙肉", "qty": 1 },
-      { "name": "松露", "qty": 6 }
-   ]
+    "name": "披薩",
+    "quality": "金色",
+    "attribute": "生命",
+    "ingredients": [
+        { "name": "橙蛋", "qty": 4 },
+        { "name": "橙肉", "qty": 1 },
+        { "name": "松露", "qty": 6 }
+    ]
 }
 ```
 

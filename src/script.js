@@ -1,4 +1,4 @@
-/** @type {{ recipes: Array<{name: string, quality?: string, ingredients: Array<{name: string, qty: number}>}> }} */
+/** @type {{ recipes: Array<{name: string, quality?: string, attribute?: string, ingredients: Array<{name: string, qty: number}>}> }} */
 let data = { recipes: [] };
 
 /** 已選料理：[{name, servings}] */
@@ -21,6 +21,7 @@ const recipeSearch = el('recipeSearch');
 
 // 篩選狀態
 let currentQualityFilter = 'all';
+let currentAttrFilter = 'all';
 let currentSearchText = '';
 
 const selectedEmpty = el('selectedEmpty');
@@ -213,6 +214,10 @@ function getFilteredRecipes() {
     return data.recipes.filter((r) => {
         // 品質篩選
         if (currentQualityFilter !== 'all' && r.quality !== currentQualityFilter) {
+            return false;
+        }
+        // 屬性篩選
+        if (currentAttrFilter !== 'all' && r.attribute !== currentAttrFilter) {
             return false;
         }
         // 搜尋篩選
@@ -498,6 +503,28 @@ async function init() {
                 btn.classList.remove('border-slate-300', 'bg-white', 'text-slate-700');
 
                 currentQualityFilter = btn.getAttribute('data-quality');
+                renderRecipeOptions();
+                renderSelectedQualityBadgeForSelect();
+            });
+        });
+
+        // 屬性篩選按鍵
+        document.querySelectorAll('.attr-filter-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.attr-filter-btn').forEach((b) => {
+                    b.classList.remove(
+                        'active',
+                        'border-slate-400',
+                        'bg-slate-100',
+                        'text-cocoa-900',
+                    );
+                    b.classList.add('border-slate-300', 'bg-white', 'text-slate-700');
+                });
+
+                btn.classList.add('active', 'border-slate-400', 'bg-slate-100', 'text-cocoa-900');
+                btn.classList.remove('border-slate-300', 'bg-white', 'text-slate-700');
+
+                currentAttrFilter = btn.getAttribute('data-attr');
                 renderRecipeOptions();
                 renderSelectedQualityBadgeForSelect();
             });

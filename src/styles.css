@@ -511,6 +511,23 @@ body {
     transform: scale(0.99);
 }
 
+/* 屬性篩選按鈕（樣式同品質） */
+.attr-filter-btn {
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        border-color 0.15s,
+        color 0.15s,
+        transform 0.05s;
+}
+.attr-filter-btn:active {
+    transform: scale(0.99);
+}
+
 /* =========================
    Cost summary box
 ========================= */
