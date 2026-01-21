@@ -17,6 +17,11 @@ const addBtn = el('addBtn');
 const clearBtn = el('clearBtn');
 const status = el('status');
 const errorEl = el('error');
+const recipeSearch = el('recipeSearch');
+
+// 篩選狀態
+let currentQualityFilter = 'all';
+let currentSearchText = '';
 
 const selectedEmpty = el('selectedEmpty');
 const selectedTableWrap = el('selectedTableWrap');
@@ -183,7 +188,17 @@ function renderSelectedQualityBadgeForSelect() {
 
 function renderRecipeOptions() {
     recipeSelect.innerHTML = '';
-    for (const r of data.recipes) {
+    const filtered = getFilteredRecipes();
+
+    if (filtered.length === 0) {
+        const opt = document.createElement('option');
+        opt.disabled = true;
+        opt.textContent = '沒有符合條件的料理';
+        recipeSelect.appendChild(opt);
+        return;
+    }
+
+    for (const r of filtered) {
         const q = r.quality || '?';
         const theme = qualityTheme(q);
 
@@ -192,6 +207,20 @@ function renderRecipeOptions() {
         opt.textContent = `${theme.dot}【${q}】${r.name}`;
         recipeSelect.appendChild(opt);
     }
+}
+
+function getFilteredRecipes() {
+    return data.recipes.filter((r) => {
+        // 品質篩選
+        if (currentQualityFilter !== 'all' && r.quality !== currentQualityFilter) {
+            return false;
+        }
+        // 搜尋篩選
+        if (currentSearchText && !r.name.toLowerCase().includes(currentSearchText.toLowerCase())) {
+            return false;
+        }
+        return true;
+    });
 }
 
 function renderSelected() {
@@ -450,6 +479,35 @@ async function init() {
             setStatus('已清除單價～');
             saveAppState();
             renderTotals();
+        });
+
+        // 品質篩選按鍵
+        document.querySelectorAll('.quality-filter-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.quality-filter-btn').forEach((b) => {
+                    b.classList.remove(
+                        'active',
+                        'border-slate-400',
+                        'bg-slate-100',
+                        'text-cocoa-900',
+                    );
+                    b.classList.add('border-slate-300', 'bg-white', 'text-slate-700');
+                });
+
+                btn.classList.add('active', 'border-slate-400', 'bg-slate-100', 'text-cocoa-900');
+                btn.classList.remove('border-slate-300', 'bg-white', 'text-slate-700');
+
+                currentQualityFilter = btn.getAttribute('data-quality');
+                renderRecipeOptions();
+                renderSelectedQualityBadgeForSelect();
+            });
+        });
+
+        // 搜尋輸入框
+        recipeSearch.addEventListener('input', () => {
+            currentSearchText = recipeSearch.value.trim();
+            renderRecipeOptions();
+            renderSelectedQualityBadgeForSelect();
         });
 
         if (selected.length === 0 && data.recipes.length > 0) {

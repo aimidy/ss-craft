@@ -123,14 +123,62 @@
 
             <!-- Controls -->
             <div class="mt-6 card rounded-2xl p-5">
+                <!-- 篩選區域 -->
+                <div class="mb-4 pb-4 border-b border-slate-200">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span class="text-xs font-medium text-slate-700">品質篩選：</span>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                id="filterAll"
+                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition active"
+                                data-quality="all"
+                            >
+                                全部
+                            </button>
+                            <button
+                                id="filterGold"
+                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition"
+                                data-quality="金色"
+                            >
+                                🟡 金色
+                            </button>
+                            <button
+                                id="filterOrange"
+                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition"
+                                data-quality="橙色"
+                            >
+                                🟠 橙色
+                            </button>
+                            <button
+                                id="filterPurple"
+                                class="quality-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium border transition"
+                                data-quality="紫色"
+                            >
+                                🟣 紫色
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <span class="text-xs font-medium text-slate-700">搜尋：</span>
+                        <input
+                            id="recipeSearch"
+                            type="text"
+                            placeholder="輸入料理名稱搜尋..."
+                            class="min-w-[240px] rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                        />
+                    </div>
+                </div>
+
+                <!-- 料理列表 -->
                 <div class="flex flex-wrap items-end gap-3">
-                    <label class="flex flex-col gap-1">
+                    <label class="flex flex-col gap-1 flex-1 min-w-[260px]">
                         <span class="text-xs font-medium text-slate-700">選擇料理</span>
 
                         <div class="flex items-center gap-2 flex-wrap">
                             <select
                                 id="recipeSelect"
-                                class="min-w-[260px] rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                                class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
                             ></select>
 
                             <!-- selected quality badge -->
