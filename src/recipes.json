@@ -3,7 +3,7 @@
         {
             "name": "披薩",
             "quality": "金色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "橙蛋", "qty": 4 },
                 { "name": "橙肉", "qty": 1 },
@@ -13,7 +13,7 @@
         {
             "name": "山珍海味鍋",
             "quality": "金色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "橙螃蟹", "qty": 4 },
                 { "name": "橙肉", "qty": 1 },
@@ -23,7 +23,7 @@
         {
             "name": "海珍本味刺身",
             "quality": "金色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "水", "qty": 4 },
                 { "name": "橙章魚", "qty": 2 },
@@ -43,7 +43,7 @@
         {
             "name": "松露甜餅",
             "quality": "金色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "青禾", "qty": 2 },
                 { "name": "橙肉", "qty": 1 },
@@ -54,7 +54,7 @@
         {
             "name": "黃金仙餃",
             "quality": "金色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "芥菜", "qty": 2 },
                 { "name": "橙肉", "qty": 1 },
@@ -65,7 +65,7 @@
         {
             "name": "奶油焗龍蝦",
             "quality": "金色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "鹽", "qty": 4 },
                 { "name": "橙奶油", "qty": 2 },
@@ -84,7 +84,17 @@
                 { "name": "駝奶", "qty": 16 }
             ]
         },
-
+        {
+            "name": "幻巧方糕",
+            "quality": "金色",
+            "attribute": "生命",
+            "ingredients": [
+                { "name": "橙陽光果", "qty": 4 },
+                { "name": "麵粉", "qty": 4 },
+                { "name": "橙鳥蛋", "qty": 4 },
+                { "name": "女神之淚", "qty": 12 }
+            ]
+        },
         {
             "name": "黃金散蛋",
             "quality": "橙色",
@@ -95,6 +105,7 @@
                 { "name": "紫蛋", "qty": 3 }
             ]
         },
+
         {
             "name": "樹莓蛋糕",
             "quality": "橙色",
@@ -108,7 +119,7 @@
         {
             "name": "太陽光暈",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "紫殼栗", "qty": 3 },
                 { "name": "紫奶油", "qty": 4 },
@@ -118,7 +129,7 @@
         {
             "name": "源式章魚燒",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "紫味噌", "qty": 3 },
                 { "name": "紫莓果", "qty": 2 },
@@ -128,7 +139,7 @@
         {
             "name": "將軍破陣",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "紫辣椒", "qty": 5 },
                 { "name": "紫肉", "qty": 2 },
@@ -138,7 +149,7 @@
         {
             "name": "身披金甲",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "紫竹筍", "qty": 5 },
                 { "name": "紫肉", "qty": 2 },
@@ -148,7 +159,7 @@
         {
             "name": "解厄刺身",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "紫魚", "qty": 5 },
                 { "name": "紫味噌", "qty": 2 },
@@ -158,7 +169,7 @@
         {
             "name": "咖哩什錦菜",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "紫殼栗", "qty": 3 },
                 { "name": "紫肉", "qty": 2 },
@@ -169,7 +180,7 @@
         {
             "name": "陽光燉菜",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "紫螺肉", "qty": 6 },
                 { "name": "紫香油", "qty": 2 },
@@ -179,7 +190,7 @@
         {
             "name": "聖輝拔絲",
             "quality": "橙色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "紫蜂蜜", "qty": 1 },
                 { "name": "紫香油", "qty": 2 },
@@ -190,7 +201,7 @@
         {
             "name": "嘟嘟果釀",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "水", "qty": 2 },
                 { "name": "藍莓果", "qty": 10 }
@@ -199,7 +210,7 @@
         {
             "name": "焦甜殼栗",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "藍奶油", "qty": 5 },
                 { "name": "藍殼栗", "qty": 5 }
@@ -237,7 +248,7 @@
         {
             "name": "蜜汁烤肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "藍肉", "qty": 2 },
                 { "name": "藍蜂蜜", "qty": 10 }
@@ -246,7 +257,7 @@
         {
             "name": "坎斯汀漢堡",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "藍肉", "qty": 2 },
                 { "name": "藍土豆", "qty": 10 }
@@ -255,7 +266,7 @@
         {
             "name": "酸甜嘟嘟肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "藍肉", "qty": 2 },
                 { "name": "藍莓果", "qty": 10 }
@@ -264,7 +275,7 @@
         {
             "name": "竹筍控肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "藍肉", "qty": 2 },
                 { "name": "藍竹筍", "qty": 10 }
@@ -273,7 +284,7 @@
         {
             "name": "紅燒獅子頭",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "藍肉", "qty": 2 },
                 { "name": "藍竹筍", "qty": 10 }
@@ -282,7 +293,7 @@
         {
             "name": "鮮果燒肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "攻擊",
             "ingredients": [
                 { "name": "藍咖哩", "qty": 5 },
                 { "name": "藍肉", "qty": 2 },
@@ -292,7 +303,7 @@
         {
             "name": "塔吉鍋燉肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "藍土豆", "qty": 5 },
                 { "name": "藍肉", "qty": 2 },
@@ -302,7 +313,7 @@
         {
             "name": "滾栗子烤肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "胡椒", "qty": 2 },
                 { "name": "藍肉", "qty": 2 },
@@ -332,7 +343,7 @@
         {
             "name": "軍團燒肉",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "藍竹筍", "qty": 2 },
                 { "name": "藍肉", "qty": 2 },
@@ -342,7 +353,7 @@
         {
             "name": "芳香裏肉捲",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "藍香油", "qty": 5 },
                 { "name": "藍肉", "qty": 2 },
@@ -352,7 +363,7 @@
         {
             "name": "符文燒螺片",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "防禦",
             "ingredients": [
                 { "name": "藍香油", "qty": 4 },
                 { "name": "藍辣椒", "qty": 2 },
@@ -362,11 +373,50 @@
         {
             "name": "雲端果塔",
             "quality": "紫色",
-            "attribute": "生命",
+            "attribute": "速度",
             "ingredients": [
                 { "name": "藍奶油", "qty": 2 },
                 { "name": "藍莓果", "qty": 1 },
                 { "name": "藍蘭花", "qty": 7 }
+            ]
+        },
+        {
+            "name": "醇香雪頂",
+            "quality": "紫色",
+            "attribute": "速度",
+            "ingredients": [
+                { "name": "藍可可", "qty": 2 },
+                { "name": "藍奶油", "qty": 2 },
+                { "name": "藍跳果", "qty": 6 }
+            ]
+        },
+        {
+            "name": "南瓜密凍",
+            "quality": "紫色",
+            "attribute": "防禦",
+            "ingredients": [
+                { "name": "藍蜂蜜", "qty": 2 },
+                { "name": "琥珀", "qty": 2 },
+                { "name": "藍南瓜", "qty": 8 }
+            ]
+        },
+        {
+            "name": "彈珠汽水",
+            "quality": "紫色",
+            "attribute": "速度",
+            "ingredients": [
+                { "name": "糖", "qty": 2 },
+                { "name": "水", "qty": 2 },
+                { "name": "藍跳果", "qty": 10 }
+            ]
+        },
+        {
+            "name": "流心巧克力",
+            "quality": "紫色",
+            "attribute": "防禦",
+            "ingredients": [
+                { "name": "藍蘭草", "qty": 2 },
+                { "name": "藍可可", "qty": 8 }
             ]
         }
     ]
